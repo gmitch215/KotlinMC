@@ -1,0 +1,6 @@
+{
+  "id": "kotlin",
+  "name": "KotlinMC",
+  "version": "${project.ext.kotlin_version}",
+  "main": "me.gamercoder215.kotlinmc.Velocity"
+}

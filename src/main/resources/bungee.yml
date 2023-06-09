@@ -1,0 +1,4 @@
+name: Kotlin
+main: me.gamercoder215.kotlinmc.BungeeCord
+version: ${project.ext.kotlin_version}
+author: GamerCoder
