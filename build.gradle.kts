@@ -75,7 +75,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
 
-    compileOnly("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.20-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
 }
