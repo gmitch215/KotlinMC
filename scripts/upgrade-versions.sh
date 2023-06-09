@@ -13,15 +13,15 @@ kotlin_coroutines=${kotlin_coroutines_untrimmed#*v}
 kotlin_serialization_untrimmed=$(curl -s "https://api.github.com/repos/Kotlin/kotlinx.serialization/releases/latest" --header "Authorization: Bearer $GITHUB_TOKEN" | grep -Po '"tag_name": "\K.*?(?=")')
 kotlin_serialization=${kotlin_serialization_untrimmed#*v}
 
-echo "$kotlin" > ../versions/kotlin.txt
-echo "$kotlin_coroutines" > ../versions/kotlinx-coroutines.txt
-echo "$kotlin_serialization" > ../versions/kotlinx-serialization.txt
+echo "$kotlin" > versions/kotlin.txt
+echo "$kotlin_coroutines" > versions/kotlinx-coroutines.txt
+echo "$kotlin_serialization" > versions/kotlinx-serialization.txt
 
 if [ "$(git status --porcelain)" ]; then
-  git add ../versions/
+  git add versions/
   git commit -m "Update Kotlin Versions"
   git push
-  bash ./publish.sh
+  bash ./scripts/publish.sh
 else
   echo "No changes detected"
 fi
