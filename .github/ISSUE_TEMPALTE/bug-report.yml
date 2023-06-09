@@ -1,0 +1,36 @@
+name: Report a Bug
+description: Report a KotlinMC Bug.
+labels: ['unconfirmed bug']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a StarCosmetics bug. Please take time to fill out the information below.
+  - type: dropdown
+    attributes:
+      label: Bug Type
+      description: What type of bug are you trying to report?
+      multiple: true
+      options:
+        - Runtime Bug
+        - Update Checker Bug
+        - Other Unexpected Behavior
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: KotlinMC Version
+      description: What version of KotlinMC are you using?
+      placeholder: |
+        Ex: 1.8.22
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Description
+      placeholder: |
+        Ex: "NoClassDefFoundError: kotlin.somefunction"
+    validations:
+      required: true

@@ -1,0 +1,34 @@
+name: Library Addition
+description: Request a new library addition.
+labels: ['new library']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for recommending a new library to be added to KotlinMC. We require that all additions to KotlinMC be open-source. Please fill out the form below.
+
+  - type: dropdown
+    attributes:
+      label: Addition Type
+      description: What are we adding?
+      multiple: false
+      options:
+        - Official Kotlin Library
+        - 3rd Party Library
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Repository Link
+      placeholder: |
+        Ex: "https://github.com/myfavoritedev/cool-library"
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Additional Information
+      description: Any additional information you would like to provide.
+    validations:
+      required: false
