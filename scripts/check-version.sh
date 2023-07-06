@@ -34,7 +34,7 @@ if [ ! "$local_kotlin" = "$kotlin" ] || [ ! "$local_kotlin_coroutines" = "$kotli
 fi
 
 if [ "$upgrade" = "true" ]; then
-  bash ../scripts/upgrade-versions.sh
+  bash scripts/upgrade-versions.sh
 else
   printf "${GREEN}No Update Required!\n"
 fi
