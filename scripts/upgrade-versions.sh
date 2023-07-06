@@ -21,7 +21,7 @@ if [ "$(git status --porcelain)" ]; then
   git add versions/
   git commit -m "Update Kotlin Versions"
   git push
-  bash ./scripts/publish.sh
+  bash scripts/publish.sh
 else
   echo "No changes detected"
 fi
