@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git config user.name github-actions[bot]
-git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+git config --local user.email "action@github.com"
+git config --local user.name "GitHub Action"
 git fetch origin master
 
 kotlin_untrimmed=$(curl -s "https://api.github.com/repos/JetBrains/kotlin/releases/latest" --header "Authorization: Bearer $GITHUB_TOKEN" | grep -Po '"tag_name": "\K.*?(?=")')
