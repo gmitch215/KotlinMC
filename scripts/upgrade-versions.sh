@@ -20,7 +20,7 @@ echo "$kotlin_serialization" > versions/kotlinx-serialization.txt
 if [ "$(git status --porcelain)" ]; then
   git add versions/
   git commit -m "Update Kotlin Versions"
-  git push
+  git push -f origin master
 #  bash scripts/publish.sh
 else
   echo "No changes detected"

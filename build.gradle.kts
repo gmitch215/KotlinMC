@@ -43,6 +43,7 @@ tasks {
 modrinth {
     token.set(System.getenv("MODRINTH_TOKEN"))
     projectId.set("kotlinmc")
+    versionName.set("KotlinMC v${kotlinVersion}")
     versionNumber.set(kotlinVersion)
     versionType.set("release")
     uploadFile.set(tasks.shadowJar)
