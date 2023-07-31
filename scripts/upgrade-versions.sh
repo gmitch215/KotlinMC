@@ -2,6 +2,7 @@
 
 git config --global user.name 'github-actions[bot]'
 git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/GamerCoder215/KotlinMC"
 git fetch origin master
 
 kotlin_untrimmed=$(curl -s "https://api.github.com/repos/JetBrains/kotlin/releases/latest" --header "Authorization: Bearer $GITHUB_TOKEN" | grep -Po '"tag_name": "\K.*?(?=")')
