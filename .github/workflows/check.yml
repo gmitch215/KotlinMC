@@ -2,8 +2,8 @@ name: Check Kotlin Version
 on:
   push:
     branches: [ master ]
-#  schedule:
-#    - cron: '0 * * * *' # Every Hour
+  schedule:
+    - cron: '0 * * * *' # Every Hour
   workflow_dispatch:
 permissions:
   contents: write
