@@ -12,6 +12,8 @@ plugins {
 val kotlinVersion = version("kotlin")
 val coroutinesVersion = version("kotlinx-coroutines")
 val serializationVersion = version("kotlinx-serialization")
+val atomicfuVersion = version("kotlinx-atomicfu")
+val kotlinIoVersion = version("kotlinx-io")
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -76,6 +78,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
+    implementation("org.jetbrains.kotlinx:atomicfu:${atomicfuVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-io:${kotlinIoVersion}")
 
     compileOnly("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
@@ -84,4 +88,10 @@ dependencies {
 
 fun version(name: String): String = File("versions/${name}.txt").bufferedReader().use { it.readLine() }
 
-fun createChangelog(): String = "# KotlinMC v${kotlinVersion}\n\n- `kotlin-stdlib` / `kotlin-reflect` v${kotlinVersion}\n- `kotlinx-coroutines` v${coroutinesVersion}\n- `kotlinx-serialization` v${serializationVersion}"
+fun createChangelog(): String = "" +
+        "# KotlinMC v${kotlinVersion}\n\n" +
+        "- `kotlin-stdlib` / `kotlin-reflect` v${kotlinVersion}\n" +
+        "- `kotlinx-coroutines` v${coroutinesVersion}\n" +
+        "- `kotlinx-serialization` v${serializationVersion}" +
+        "- `kotlinx-atomicfu` v${atomicfuVersion}\n" +
+        "- `kotlinx-io` v${kotlinIoVersion}\n"
