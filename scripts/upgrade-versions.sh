@@ -13,11 +13,11 @@ api () {
 auth="Authorization: Bearer $GITHUB_TOKEN"
 tag_config='"tag_name": "\K.*?(?=")'
 
-kotlin=$(curl -s "$(api "JetBrains/Kotlin")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
-kotlin_coroutines=$(curl -s "$(api "Kotlin/kotlinx.coroutines")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
-kotlin_serialization=$(curl -s "$(api "Kotlin/kotlinx.serialization")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
-kotlin_atomicfu=$(curl -s "$(api "Kotlin/kotlinx-atomicfu")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
-kotlin_io=$(curl -s "$(api "Kotlin/kotlinx-io")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin=$(curl -s "$(api "JetBrains/Kotlin")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
+kotlin_coroutines=$(curl -s "$(api "Kotlin/kotlinx.coroutines")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
+kotlin_serialization=$(curl -s "$(api "Kotlin/kotlinx.serialization")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
+kotlin_atomicfu=$(curl -s "$(api "Kotlin/kotlinx-atomicfu")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
+kotlin_io=$(curl -s "$(api "Kotlin/kotlinx-io")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 
 echo "$kotlin" > versions/kotlin.txt
 echo "$kotlin_coroutines" > versions/kotlinx-coroutines.txt

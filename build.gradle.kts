@@ -92,6 +92,6 @@ fun createChangelog(): String = "" +
         "# KotlinMC v${kotlinVersion}\n\n" +
         "- `kotlin-stdlib` / `kotlin-reflect` v${kotlinVersion}\n" +
         "- `kotlinx-coroutines` v${coroutinesVersion}\n" +
-        "- `kotlinx-serialization` v${serializationVersion}" +
+        "- `kotlinx-serialization` v${serializationVersion}\n" +
         "- `kotlinx-atomicfu` v${atomicfuVersion}\n" +
         "- `kotlinx-io` v${kotlinIoVersion}\n"

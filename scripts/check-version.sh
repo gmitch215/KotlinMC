@@ -13,31 +13,31 @@ api () {
 auth="Authorization: Bearer $GITHUB_TOKEN"
 tag_config='"tag_name": "\K.*?(?=")'
 
-kotlin=$(curl -s "$(api "JetBrains/Kotlin")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin=$(curl -s "$(api "JetBrains/Kotlin")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 local_kotlin=$(cat versions/kotlin.txt)
 
 printf "${GREEN}Latest Kotlin Version: %s\n" "$kotlin"
 printf "${YELLOW}Local Kotlin Version: %s\n\n" "$local_kotlin"
 
-kotlin_coroutines=$(curl -s "$(api "Kotlin/kotlinx.coroutines")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin_coroutines=$(curl -s "$(api "Kotlin/kotlinx.coroutines")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 local_kotlin_coroutines=$(cat versions/kotlinx-coroutines.txt)
 
 printf "${GREEN}Latest Kotlin Coroutines Version: %s\n" "$kotlin_coroutines"
 printf "${YELLOW}Local Kotlin Coroutines Version: %s\n\n" "$local_kotlin_coroutines"
 
-kotlin_serialization=$(curl -s "$(api "Kotlin/kotlinx.serialization")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin_serialization=$(curl -s "$(api "Kotlin/kotlinx.serialization")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 local_kotlin_serialization=$(cat versions/kotlinx-serialization.txt)
 
 printf "${GREEN}Latest Kotlin Serialization Version: %s\n" "$kotlin_serialization"
 printf "${YELLOW}Local Kotlin Serialization Version: %s\n\n" "$local_kotlin_serialization"
 
-kotlin_atomicfu=$(curl -s "$(api "Kotlin/kotlinx-atomicfu")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin_atomicfu=$(curl -s "$(api "Kotlin/kotlinx-atomicfu")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 local_kotlin_atomicfu=$(cat versions/kotlinx-atomicfu.txt)
 
 printf "${GREEN}Latest Kotlin AtomicFU Version: %s\n" "$kotlin_atomicfu"
 printf "${YELLOW}Local Kotlin AtomicFU Version: %s\n\n" "$local_kotlin_atomicfu"
 
-kotlin_io=$(curl -s "$(api "Kotlin/kotlinx-io")" --header "$auth" | grep -Po "$tag_config" | cut -c2-)
+kotlin_io=$(curl -s "$(api "Kotlin/kotlinx-io")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
 local_kotlin_io=$(cat versions/kotlinx-io.txt)
 
 printf "${GREEN}Latest Kotlin IO Version: %s\n" "$kotlin_io"
