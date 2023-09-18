@@ -34,6 +34,12 @@ tasks {
 
     shadowJar {
         archiveClassifier.set("")
+
+        dependencies {
+            exclude {
+                it.moduleName.contains("annotations")
+            }
+        }
     }
 
     processResources {
@@ -79,7 +85,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:${serializationVersion}")
     implementation("org.jetbrains.kotlinx:atomicfu:${atomicfuVersion}")
-    implementation("org.jetbrains.kotlinx:kotlinx-io:${kotlinIoVersion}")
+    implementation("org.jetbrains.kotlinx:kotlinx-io-core:${kotlinIoVersion}")
 
     compileOnly("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
