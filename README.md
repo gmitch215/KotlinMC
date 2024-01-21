@@ -7,7 +7,7 @@ A library for the kotlin runtime and various Kotlin Libraries on Spigot, BungeeC
 Every hour, the actions workflow will run a series of bash scripts (see the `scripts` folder) to send an API request 
 to the following libraries for new releases:
 - [`JetBrains/Kotlin`](https://github.com/JetBrains/Kotlin)
-- [`Kotlin/kotlinx.coroutines`](https://github.com/Kotlin/kotlinx.coroutines),
+- [`Kotlin/kotlinx.coroutines`](https://github.com/Kotlin/kotlinx.coroutines)
 - [`Kotlin/kotlinx.serialization`](https://github.com/Kotlin/kotlinx.serialization) 
 - [`Kotlin/kotlinx-atomicfu`](https://github.com/Kotlin/kotlinx.atomicfu)
 - [`Kotlin/kotlinx-io`](https://github.com/Kotlin/kotlinx-io)
