@@ -3,4 +3,5 @@ main: me.gamercoder215.kotlinmc.Spigot
 version: ${project.ext.kotlin_version}
 api-version: 1.13
 author: GamerCoder
+folia-supported: true
 website: ${project.ext.url}
