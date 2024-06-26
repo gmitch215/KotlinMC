@@ -2,7 +2,7 @@
 
 git config --global user.name 'github-actions[bot]'
 git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
-git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/GamerCoder215/KotlinMC"
+git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/gmitch215/KotlinMC"
 git fetch origin master
 
 api () {

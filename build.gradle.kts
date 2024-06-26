@@ -61,7 +61,7 @@ modrinth {
         "1.8.1", "1.8"
     ))
     loaders.addAll(listOf("bukkit", "bungeecord", "folia", "paper", "purpur", "spigot", "velocity", "waterfall"))
-    changelog.set(createChangelog())
+    changelog.set(changelog())
 
     syncBodyFrom.set(rootProject.file("README.md").bufferedReader().use { it.readText() })
 }
@@ -94,10 +94,4 @@ dependencies {
 
 fun version(name: String): String = File("versions/${name}.txt").bufferedReader().use { it.readLine() }
 
-fun createChangelog(): String = "" +
-        "# KotlinMC v${kotlinVersion}\n\n" +
-        "- `kotlin-stdlib` / `kotlin-reflect` v${kotlinVersion}\n" +
-        "- `kotlinx-coroutines` v${coroutinesVersion}\n" +
-        "- `kotlinx-serialization` v${serializationVersion}\n" +
-        "- `kotlinx-atomicfu` v${atomicfuVersion}\n" +
-        "- `kotlinx-io` v${kotlinIoVersion}\n"
+fun changelog(): String = File("CHANGELOG.md").bufferedReader().use { it.readText() }
