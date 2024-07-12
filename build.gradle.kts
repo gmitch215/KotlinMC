@@ -23,7 +23,7 @@ java {
 group = "me.gamercoder215.kotlinmc"
 version = kotlinVersion
 
-project.ext["url"] = "https://github.com/GamerCoder215/KotlinMC"
+project.ext["url"] = "https://github.com/gmitch215/KotlinMC"
 project.ext["kotlin_version"] = kotlinVersion
 
 tasks {
