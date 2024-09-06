@@ -80,6 +80,19 @@ else
   upgrade=true
 fi
 
+kotlin_datetime=$(curl -s "$(api "Kotlin/kotlinx-datetime")" --header "$auth" | grep -Po "$tag_config" | cut -d "v" -f2-)
+local_kotlin_datetime=$(cat versions/kotlinx-datetime.txt | xargs | tr -d '\r\n')
+
+printf "${GREEN}Latest Kotlin DateTime Version: %s${RESET}\n" "$kotlin_datetime"
+printf "${YELLOW}Local Kotlin DateTime Version: %s${RESET}\n\n" "$local_kotlin_datetime"
+
+if [ "$local_kotlin_datetime" = "$kotlin_datetime" ]; then
+  kotlin_datetime_diff="v$kotlin_datetime"
+else
+  kotlin_datetime_diff="v$local_kotlin_datetime -> v$kotlin_datetime"
+  upgrade=true
+fi
+
 if [ "${upgrade}" = "true" ]; then
     printf "${YELLOW}Updating is Required!${RESET}\n"
     upgrade=true
@@ -91,10 +104,11 @@ if [ "${upgrade}" = "true" ]; then
     kotlinx_serialization_changelog="- \`kotlinx-serialization\` ${kotlin_serialization_diff}\n"
     kotlinx_atomicfu_changelog="- \`kotlinx-atomicfu\` ${kotlin_atomicfu_diff}\n"
     kotlinx_io_changelog="- \`kotlinx-io\` ${kotlin_io_diff}\n"
+    kotlinx_datetime_changelog="- \`kotlinx-datetime\` ${kotlin_datetime_diff}\n"
 
     changelog_end="\n## [View on GitHub](https://github.com/gmitch215/KotlinMC)"
 
-    changelog="${header}${kotlin_changelog}${kotlinx_coroutines_changelog}${kotlinx_serialization_changelog}${kotlinx_atomicfu_changelog}${kotlinx_io_changelog}${changelog_end}"
+    changelog="${header}${kotlin_changelog}${kotlinx_coroutines_changelog}${kotlinx_serialization_changelog}${kotlinx_atomicfu_changelog}${kotlinx_io_changelog}${kotlinx_datetime_changelog}${changelog_end}"
     echo -e $changelog > CHANGELOG.md
 
     bash scripts/upgrade-versions.sh
