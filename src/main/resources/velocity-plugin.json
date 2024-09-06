@@ -1,6 +1,7 @@
 {
   "id": "kotlin",
-  "name": "KotlinMC",
+  "name": "Kotlin",
   "version": "${project.ext.kotlin_version}",
-  "main": "me.gamercoder215.kotlinmc.Velocity"
+  "main": "xyz.gmitch215.kotlinmc.Velocity",
+  "description": "${project.description}"
 }

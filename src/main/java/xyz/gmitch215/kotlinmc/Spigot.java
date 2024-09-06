@@ -1,4 +1,4 @@
-package me.gamercoder215.kotlinmc;
+package xyz.gmitch215.kotlinmc;
 
 import org.bukkit.plugin.java.JavaPlugin;
 

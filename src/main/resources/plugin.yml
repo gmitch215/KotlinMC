@@ -1,7 +1,8 @@
 name: Kotlin
-main: me.gamercoder215.kotlinmc.Spigot
+main: xyz.gmitch215.kotlinmc.Spigot
 version: ${project.ext.kotlin_version}
+description: ${project.description}
 api-version: 1.13
-author: GamerCoder
+author: gmitch215
 folia-supported: true
 website: ${project.ext.url}
