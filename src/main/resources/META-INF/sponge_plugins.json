@@ -1,0 +1,26 @@
+{
+  "loader": {
+    "name": "java_plain",
+    "version": "1.0"
+  },
+  "license": "GPL-3.0",
+  "plugins": [
+    {
+      "id": "kotlin",
+      "entrypoint": "xyz.gmitch215.kotlinmc.Sponge",
+      "name": "Kotlin",
+      "description": "${project.description}",
+      "version": "${project.ext.kotlin_version}",
+      "links": {
+        "source": "${project.ext.url}",
+        "issues": "${project.ext.url}/issues"
+      },
+      "contributors": [
+        {
+          "name": "gmitch215",
+          "description": "Owner"
+        }
+      ]
+    }
+  ]
+}
