@@ -1,6 +1,6 @@
 # KotlinMC
 
-A library for the kotlin runtime and various Kotlin Libraries on Spigot, BungeeCord and Velocity Servers.
+A library for the kotlin runtime and various Kotlin Libraries on Spigot, BungeeCord, Velocity, and Sponge Servers.
 
 ## How does it Work?
 
@@ -11,5 +11,6 @@ to the following libraries for new releases:
 - [`Kotlin/kotlinx.serialization`](https://github.com/Kotlin/kotlinx.serialization) 
 - [`Kotlin/kotlinx-atomicfu`](https://github.com/Kotlin/kotlinx.atomicfu)
 - [`Kotlin/kotlinx-io`](https://github.com/Kotlin/kotlinx-io)
+- [`Kotlin/kotlinx-datetime`](https://github.com/Kotlin/kotlinx-datetime)
 
 If a new release is detected, versions stored in the `versions` folder will be updated, the Gradle Plugin will automatically be updated to include the latest version, and a publish is automatically shipped to [Modrinth](https://modrinth.com/plugin/kotlinmc/).
