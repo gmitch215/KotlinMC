@@ -18,8 +18,8 @@ val kotlinIoVersion = version("kotlinx-io")
 val dateTimeVersion = version("kotlinx-datetime")
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 group = "me.gamercoder215.kotlinmc"
@@ -92,7 +92,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-io-core:${kotlinIoVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:${dateTimeVersion}")
 
-    compileOnly("org.spigotmc:spigot-api:1.8-R0.1-SNAPSHOT")
+    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
     compileOnly("org.spongepowered:spongeapi:8.0.0")

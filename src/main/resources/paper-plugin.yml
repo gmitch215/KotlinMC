@@ -1,0 +1,9 @@
+name: Kotlin
+main: xyz.gmitch215.kotlinmc.Paper
+bootstrapper: xyz.gmitch215.kotlinmc.PaperPluginBootstrap
+version: ${project.ext.kotlin_version}
+description: ${project.description}
+api-version: 1.21
+author: gmitch215
+folia-supported: true
+website: ${project.ext.url}
