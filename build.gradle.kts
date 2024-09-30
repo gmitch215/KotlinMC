@@ -8,6 +8,7 @@ plugins {
     id("com.gradleup.shadow") version "8.3.0"
     id("com.modrinth.minotaur") version "2.+"
     java
+    id("io.papermc.paperweight.userdev") version "1.7.3"
 }
 
 val kotlinVersion = version("kotlin")
@@ -36,7 +37,8 @@ tasks {
     }
 
     shadowJar {
-        archiveClassifier.set("")
+        archiveClassifier = ""
+        archiveBaseName = "kotlin"
 
         dependencies {
             exclude {
@@ -92,10 +94,16 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-io-core:${kotlinIoVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:${dateTimeVersion}")
 
-    compileOnly("io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle("1.21.1-R0.1-SNAPSHOT")
     compileOnly("net.md-5:bungeecord-api:1.8-SNAPSHOT")
     compileOnly("com.velocitypowered:velocity-api:3.1.1")
     compileOnly("org.spongepowered:spongeapi:8.0.0")
+    compileOnly("space.vectrix.ignite:ignite-api:1.0.1")
+    compileOnly("org.spongepowered:mixin:0.8.6")
+}
+
+paperweight {
+    reobfArtifactConfiguration = io.papermc.paperweight.userdev.ReobfArtifactConfiguration.MOJANG_PRODUCTION
 }
 
 fun version(name: String): String = File("versions/${name}.txt").bufferedReader().use { it.readLine() }

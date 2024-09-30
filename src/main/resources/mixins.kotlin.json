@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.5",
+  "package": "xyz.gmitch215.kotlinmc",
+  "plugin": "xyz.gmitch215.kotlinmc.Mixin",
+  "target": "@env(DEFAULT)",
+  "compatibilityLevel": "JAVA_17",
+  "server": []
+}

@@ -1,0 +1,7 @@
+{
+  "id": "kotlin",
+  "version": "${project.ext.kotlin_version}",
+  "mixins": [
+    "mixins.kotlin.json"
+  ]
+}
