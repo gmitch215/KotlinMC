@@ -1,5 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "ignoreDeps": [
+    "net.md-5:bungeecord-api",
+    "org.spongepowered:spongeapi",
+    "org.spigotmc:spigot-api",
+    "com.velocitypowered:velocity-api"
+  ],
   "extends": [
     "config:recommended"
   ]
